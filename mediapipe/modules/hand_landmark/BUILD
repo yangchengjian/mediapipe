@@ -126,6 +126,8 @@ mediapipe_simple_subgraph(
         "//mediapipe/calculators/util:collection_has_min_size_calculator",
         "//mediapipe/calculators/util:filter_collection_calculator",
         "//mediapipe/modules/palm_detection:palm_detection_cpu",
+        "//hand_gesture_recognition:hand_gesture_recognition_calculator",
+        "//hand_movement_recognition:hand_movement_recognition_calculator"
     ],
 )
 

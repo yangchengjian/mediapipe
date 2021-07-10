@@ -237,3 +237,19 @@ node {
   }
   output_stream: "PREV_LOOP:prev_hand_rects_from_landmarks"
 }
+
+node {
+  calculator: "HandGestureRecognitionCalculator"
+  input_stream: "NORM_LANDMARKS:single_hand_landmarks"
+  input_stream: "NORM_RECT:single_hand_rect_from_landmarks"
+  output_stream: "RECOGNIZED_HAND_GESTURE:recognized_hand_gesture"
+}
+
+node {
+   calculator: "HandMovementRecognitionCalculator"
+   input_stream: "NORM_LANDMARKS:single_hand_landmarks"
+   input_stream: "NORM_RECT:single_hand_rect_from_landmarks"
+   output_stream: "RECOGNIZED_HAND_MOVEMENT_SCROLLING:recognized_hand_movement_scrolling"
+   output_stream: "RECOGNIZED_HAND_MOVEMENT_ZOOMING:recognized_hand_movement_zooming"
+   output_stream: "RECOGNIZED_HAND_MOVEMENT_SLIDING:recognized_hand_movement_sliding"
+}
